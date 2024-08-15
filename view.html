@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View the detailed image of our E-Magazine.">
+    <meta name="keywords" content="e-magazine, detailed view, magazine images">
+    <title>View Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>E-Magazine</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="page-title">View Page</h2>
+        <div id="image-container">
+            <!-- Large image will be inserted here by JavaScript -->
+        </div>
+        <div id="page-links">
+            <!-- Page links will be inserted here by JavaScript -->
+        </div>
+    </main>
+    <script src="session.js"></script>
+    <script>
+        // Get the page number from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageNumber = urlParams.get('page');
+
+        // Display the image and set the heading
+        if (pageNumber) {
+            document.getElementById('page-title').textContent = `Page ${pageNumber}`;
+            
+            const img = document.createElement('img');
+            img.src = `images/page${pageNumber}.jpg`;
+            img.alt = `Page ${pageNumber}`;
+            img.classList.add('large-image');
+            document.getElementById('image-container').appendChild(img);
+        }
+
+        // Create page links in a grid style
+        const totalPages = 60;
+        const pageLinksContainer = document.getElementById('page-links');
+        pageLinksContainer.classList.add('grid-container');
+        
+        for (let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.href = `view.html?page=${i}`;
+            pageLink.textContent = i;
+            pageLink.classList.add('page-link');
+            if (i == pageNumber) {
+                pageLink.classList.add('active');
+            }
+            pageLinksContainer.appendChild(pageLink);
+        }
+    </script>
+</body>
+</html>

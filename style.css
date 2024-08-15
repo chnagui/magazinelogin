@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #46ab95;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.page {
+    margin: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.page img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.page:hover {
+    transform: scale(1.05);
+    border-bottom: 2px solid rgb(87, 205, 14);
+    border-bottom: 90%;
+    border-bottom-width: 90%;
+}
+
+.page-link {
+    display: block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+#controls {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#controls button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.large-image {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#page-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.page-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.page-link:hover {
+    background-color: #ddd;
+    border-bottom: 1px solid rgb(125, 184, 35);
+}
+
+.page-link.active {
+    background-color: #333;
+    color: #fff;
+}
+
+h2#page-title {
+    text-align: center;
+}
+
+p.footer-text {
+    background: #46ab95;
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    color: wheat;
+}
